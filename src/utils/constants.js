@@ -9,7 +9,7 @@ export const AvalibleUserRoles = Object.values(UserRolesEnum);
 export const ProjectStatusEnum = {
   TODO: "todo",
   IN_PROGRESS: "inProgress",
-  DONE: "done",
+  DONE: "done ",
 };
 
 export const AvalibleProjectRoles = Object.values(ProjectStatusEnum);
