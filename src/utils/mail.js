@@ -9,8 +9,8 @@ const sendEmail = async (options) => {
       link: "https://taskmanagerlink.com",
     },
   });
-  const emailTextual = mailGenerator.generatePlaintext(options.mailGenerator);
-  const emailHtml = mailGenerator.generate(options.mailGenerator);
+  const emailTextual = mailGenerator.generatePlaintext(options.mailgenContent);
+  const emailHtml = mailGenerator.generate(options.mailgenContent);
 
   const transporter = nodeMailer.createTransport({
     host: process.env.MAILTRAP_SMTP_HOST,
@@ -35,7 +35,7 @@ const sendEmail = async (options) => {
     console.error(
       "Email service failed siliently. Make sure that you have provided your MAILTRAP credentials in the .env file",
     );
-    console.error("Error:", err);
+    console.error("Error:", error);
   }
 };
 
@@ -43,7 +43,7 @@ const emailVerificationMailgenContent = (username, verificationUrl) => {
   return {
     body: {
       name: username,
-      into: "Welcome too our App! We are excited to have you on board.",
+      intro: "Welcome too our App! We are excited to have you on board.",
       action: {
         instructions:
           "To verify you email please click on the following button",
@@ -62,7 +62,7 @@ const forgotPasswordMailgenContent = (username, passwordResetUrl) => {
   return {
     body: {
       name: username,
-      into: "We got a request to reset your password of your account.",
+      intro: "We got a request to reset your password of your account.",
       action: {
         instructions:
           "To reset your password please click on the following button or link",
