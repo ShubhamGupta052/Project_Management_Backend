@@ -13,6 +13,7 @@ import {
 } from "../controller/auth.controller.js";
 import { validate } from "../middlewares/validator.middleware.js";
 import {
+  userLoginValidator,
   userRegisterValidator,
   userForgotPasswordValidator,
   userResetForgotPasswordValidator,
@@ -24,7 +25,7 @@ const router = Router();
 
 //unsecure route
 router.route("/register").post(userRegisterValidator(), validate, registerUser);
-router.route("/login").post(userRegisterValidator(), validate, login);
+router.route("/login").post(userLoginValidator(), validate, login);
 router.route("/verify-email/:verificationToken").get(verifyEmail);
 router.route("/refresh-token").post(refreshAccessToken);
 router

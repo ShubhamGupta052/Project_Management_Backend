@@ -251,7 +251,7 @@ const updateMemberRole = asyncHandler(async (req, res) => {
     );
 });
 
-const deleteMemberRole = asyncHandler(async (req, res) => {
+const deleteMember = asyncHandler(async (req, res) => {
   const { projectId, userId } = req.params;
 
   let projectMember = await ProjectMember.findOne({
@@ -287,7 +287,7 @@ export {
   getProjectById,
   getProjectsMembers,
   deleteProject,
-  deleteMemberRole,
+  deleteMember,
   updateMemberRole,
   updateProject,
 };
