@@ -1,15 +1,15 @@
 import { Router } from "express";
 import {
-  changeCurrentPassword,
-  forgotPaswordRequest,
-  getCurrentUser,
+  registerUser,
   login,
   logoutUser,
-  refreshAccessToken,
-  registerUser,
-  resendEmailVerification,
-  resetForgotPassword,
+  getCurrentUser,
   verifyEmail,
+  resendEmailVerification,
+  refreshAccessToken,
+  forgotPaswordRequest,
+  resetForgotPassword,
+  changeCurrentPassword,
 } from "../controller/auth.controller.js";
 import { validate } from "../middlewares/validator.middleware.js";
 import {
